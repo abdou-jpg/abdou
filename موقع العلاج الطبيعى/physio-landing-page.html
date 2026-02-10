@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مركز العلاج الطبيعي - استعادة صحتك وحركتك</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #2c5f7c 0%, #3a7d9e 100%);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, #e8f4f8 0%, #ffffff 100%);
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            color: #2c5f7c;
+            margin-bottom: 15px;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #5a9eb8;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c5f7c;
+            margin-bottom: 20px;
+        }
+
+        .section-description {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #2c5f7c;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 800px;
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e8f4f8 100%);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            color: #2c5f7c;
+            padding: 20px 25px 10px;
+            font-size: 1.4rem;
+        }
+
+        .service-card p {
+            padding: 0 25px 25px;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Treatments Section */
+        .treatments {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .treatment-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .treatment-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+
+        .treatment-item.reverse {
+            direction: ltr;
+        }
+        
+        .treatment-item.reverse .treatment-info {
+            direction: rtl; /* ضمان بقاء النص العربي صحيحاً في القسم المعكوس */
+        }
+
+        .treatment-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .treatment-info h3 {
+            color: #2c5f7c;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .treatment-info p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Exercises Section */
+        .exercises {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #e8f4f8 0%, #f8f9fa 100%);
+        }
+
+        .exercise-categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .category {
+            padding: 12px 30px;
+            background: white;
+            color: #2c5f7c;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        .category:hover,
+        .category.active {
+            background: #2c5f7c;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(44, 95, 124, 0.3);
+        }
+
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .exercise-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .exercise-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .exercise-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .exercise-card h3 {
+            color: #2c5f7c;
+            padding: 20px 20px 10px;
+            font-size: 1.3rem;
+        }
+
+        .exercise-card p {
+            padding: 0 20px 20px;
+            color: #666;
+        }
+
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 15px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .member-image {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #2c5f7c;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            color: #2c5f7c;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .specialty {
+            color: #5a9eb8;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .bio {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f8f9fa 0%, #e8f4f8 100%);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            min-width: 50px;
+        }
+
+        .info-item h4 {
+            color: #2c5f7c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info-item p {
+            color: #666;
+            margin: 5px 0;
+        }
+
+        .map-container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-container img {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .social-media {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            margin-top: 20px;
+        }
+
+        .social-media h3 {
+            color: #2c5f7c;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2c5f7c;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            background: #3a7d9e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(44, 95, 124, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a3a4d;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 20px;
+            color: #5a9eb8;
+        }
+
+        .footer-section p {
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .footer-section a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 10px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .treatment-item,
+            .treatment-item.reverse {
+                grid-template-columns: 1fr;
+                direction: rtl;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav {
+                justify-content: center;
+                margin-top: 15px;
+            }
+            
+            .header .container {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🏥 مركز العلاج الطبيعي</h1>
+                <p class="tagline">العلاج المهني لحياة أفضل</p>
+            </div>
+            <nav class="nav">
+                <a href="#home">الرئيسية</a>
+                <a href="#about">عن العلاج</a>
+                <a href="#services">خدماتنا</a>
+                <a href="#treatments">طرق العلاج</a>
+                <a href="#exercises">التمارين</a>
+                <a href="#team">فريقنا</a>
+                <a href="#contact">اتصل بنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="main-title">استعد صحتك وحركتك</h2>
+                    <p class="subtitle">علاج طبيعي متخصص لتحسين جودة حياتك</p>
+                    <p class="description">نقدم خدمات علاج طبيعي شاملة لتخفيف الألم، استعادة الحركة، وتحسين نوعية حياتك من خلال رعاية متخصصة</p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=Oa%2F6MN2R3litKN5%2FMdks6M3k33X0%2BxOHzTqc4WgNNIz5f4WybJP3KZQ1rAOJ8GanApY6vDaj6odm5H8WLWGZAXCTcBop7U8OjuJpwgapwMnHRZh3BnU%2FHgTpmlyfVBZT%2Fc9lOwCVvk6PwZ%2BOHZoJ5t%2F218jyK87I&u2=m87cuIIZQIZyuv1N&width=2560" alt="علاج طبيعي">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">ما هو العلاج الطبيعي؟</h2>
+            <p class="section-description">العلاج الطبيعي هو تخصص طبي يهدف إلى تحسين الحركة وتخفيف الألم وتعزيز جودة الحياة من خلال الرعاية المتخصصة</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">💊</div>
+                    <h3>تخفيف الألم</h3>
+                    <p>علاج فعال للألم المزمن والحاد باستخدام تقنيات متقدمة</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏃</div>
+                    <h3>إعادة التأهيل</h3>
+                    <p>برامج تأهيل شاملة لاستعادة الوظائف الحركية</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💚</div>
+                    <h3>العافية الشاملة</h3>
+                    <p>تحسين الصحة العامة ونوعية الحياة</p>
+                </div>
+            </div>
+
+            <div class="about-image">
+                <img src="https://sspark.genspark.ai/cfimages?u1=greO%2BtiyCSPHY54AwTlHg8I6ZFCg1vIvLAmTrqmojHdcsGkAMbVVTN3Id%2FtdfunGvvnYdr7j%2FNwRaN94XDP2muZQKUHjmR1zW35rzZ%2FgtA6hoaEw%2FXEdIlLKhYss9scuWcdwFpiu%2FJqqqhmrvfB25rBEizy5TyQFtS7ylRSnkC6P2DxWbIQmYHPRtqQe40lTGJ%2BCE%2FxEOr4R6RW5YXjHIURp98uUhqIfhc6Ul4Ycr3u5QzRnu%2Fg%2FR2aa1Hd74DV01ozDBSIUQKb%2FRw%3D%3D&u2=vDW1L43vD3t2Huxm&width=2560" alt="جلسة علاج طبيعي">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا العلاجية</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="موقع العلاج الطبيعى/pexels-ryutaro-5473182.jpg" alt="آلام الظهر والرقبة">
+                    <h3>علاج آلام الظهر والرقبة</h3>
+                    <p>برامج علاجية متخصصة لتخفيف آلام العمود الفقري والرقبة</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=a7HRYk%2BtZbxoj3Kz4emQ04qHdbPo8hpc%2FDNUpH6oJJ%2FYOhLB6Fk1wQU9z4zrqs85v2kVgQs%2BWEPtof5dxRTF%2FHFYeNbmUKPNzcJQFLCC6NRSnTQZ95tAygxtCopbIKOcCjDFLe60&u2=Js%2FMN6VrXeU6WyW5&width=2560" alt="الإصابات الرياضية">
+                    <h3>علاج الإصابات الرياضية</h3>
+                    <p>إعادة تأهيل الرياضيين والعودة للنشاط الرياضي بأمان</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="3.webp" alt="ما بعد الجراحة">
+                    <h3>إعادة التأهيل بعد الجراحة</h3>
+                    <p>برامج تأهيل متكاملة للتعافي السريع بعد العمليات الجراحية</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=qonkZxPbWPCPuN5R90h%2FhiG2KbRfakHaGh%2F7Tow4WFo4q3xug3AhY2FrnVQh%2FOewZrTUV2ZsBcntLVYpupVsULhq9KnCrof8yGpVWAU9bz39QQBy%2F07sfUL0QmrrvDZRo3u0sA%3D%3D&u2=WxtDy7NPPpFvu7KW&width=2560" alt="علاج عصبي">
+                    <h3>العلاج العصبي</h3>
+                    <p>علاج اضطرابات الجهاز العصبي وتحسين الوظائف الحركية</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="pexels-kampus-7551627.jpg" alt="رعاية المسنين">
+                    <h3>رعاية كبار السن</h3>
+                    <p>برامج خاصة لتحسين حركة وتوازن كبار السن</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=D6vtSFCTJK5kIf3C%2Fo5niKJ%2B9dkCZqNMqEP6jJA8L9aLfh3ZgLUekk2Li74L%2BoaEpMhAw%2B1%2BZYSLAHrGwnu82dnlqUSIPjq9a%2BAQK7Qq9120VpcLf10mvnhSmokustLFM8IJe626OBQ%3D&u2=hGOnyqQCUVxWJ4Wd&width=2560" alt="علاج اليد">
+                    <h3>علاج اليد والمعصم</h3>
+                    <p>علاج متخصص لإصابات واضطرابات اليد والمعصم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="treatments" class="treatments">
+        <div class="container">
+            <h2 class="section-title">طرق العلاج المتقدمة</h2>
+            
+            <div class="treatment-list">
+                <div class="treatment-item">
+                    <div class="treatment-image">
+                        <img src="https://sspark.genspark.ai/cfimages?u1=92ttreLuAVdOWF7UJ0NIUh2wRBVXx0%2FI6F5TYaREoiNzKUwO%2BR%2FA5W9gnAsBsWHP3KRyjtoPkb1S8vleQNOOuHs%2FBzcWmTxwSB%2B5b11H1HID7cRMirHZVKsmKVUjDv%2FFuZqJyhVnOQ29XvMAWhGdZmEwuPV0m%2Brm1gxNQmfDrEBIkro9ovi%2BkdsHb8Fq%2F4kKMLHz9FR7VnC%2FNmfLFg%3D%3D&u2=lYqCVCEmsq4WrjgM&width=2560" alt="العلاج المائي">
+                    </div>
+                    <div class="treatment-info">
+                        <h3>🌊 العلاج المائي</h3>
+                        <p>استخدام الماء الدافئ لتخفيف الألم وتحسين الحركة في بيئة آمنة ومريحة</p>
+                    </div>
+                </div>
+
+                <div class="treatment-item reverse">
+                    <div class="treatment-image">
+                        <img src="https://sspark.genspark.ai/cfimages?u1=s9jwGGUntu2w9QJO4BBPt%2FsoF150PCcbsEoqii8vVari2vrEHxXBOxx5JTp0ZwJBihCnmh3NAGt%2F5Q6fiFUcJeVsOQ%2FArZpAwbN%2FjEoY3GTrhpSmaOP8C8YzWTgWJa2xdA%3D%3D&u2=GtDtYltbUWHynNtM&width=2560" alt="التمارين العلاجية">
+                    </div>
+                    <div class="treatment-info">
+                        <h3>💪 التمارين العلاجية</h3>
+                        <p>برامج تمارين مخصصة لكل حالة لتقوية العضلات وتحسين المرونة</p>
+                    </div>
+                </div>
+
+                <div class="treatment-item">
+                    <div class="treatment-image">
+                        <img src="https://sspark.genspark.ai/cfimages?u1=CeXglSQSJsZUPt4h3y83jhdXq%2ByskD%2BgoSoH61LaxaJWPKaLuKhEut6nMTOl59lzKwgGLtjq%2Fl1iHvG31RwXEdKJHjhw89pWx9GLVvDbLMkYMhuFoLfxMG3UWsblTz4ejv%2FG9xbujA%3D%3D&u2=WAng679FIHlpmdxD&width=2560" alt="العلاج اليدوي">
+                    </div>
+                    <div class="treatment-info">
+                        <h3>👐 العلاج اليدوي</h3>
+                        <p>تقنيات يدوية متخصصة لتحسين حركة المفاصل وتخفيف التوتر العضلي</p>
+                    </div>
+                </div>
+
+                <div class="treatment-item reverse">
+                    <div class="treatment-image">
+                        <img src="https://sspark.genspark.ai/cfimages?u1=4MlxBDSvDl1FDmW9tkdz53fpsj75M0tnVKfwwUgdLV%2Fx%2BO5vCf8XznJ7vXi1rCwyzUgMe4spveYg1%2Bw3EcD1L7DgBF4G8kOPx2iP8S2QLXuihdF87Q%3D%3D&u2=tYMWuiraa92Zzqmj&width=2560" alt="إعادة التأهيل الوظيفي">
+                    </div>
+                    <div class="treatment-info">
+                        <h3>🎯 إعادة التأهيل الوظيفي</h3>
+                        <p>برامج مصممة لإعادة المريض إلى نشاطاته اليومية والمهنية</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="exercises" class="exercises">
+        <div class="container">
+            <h2 class="section-title">العلاج بالتمارين</h2>
+            <p class="section-description">تمارين متخصصة لكل جزء من الجسم</p>
+            
+            <div class="exercise-categories">
+                <div class="category active" data-category="neck">تمارين الرقبة</div>
+                <div class="category" data-category="back">تمارين الظهر</div>
+                <div class="category" data-category="shoulder">تمارين الكتف</div>
+                <div class="category" data-category="knee">تمارين الركبة</div>
+            </div>
+
+            <div class="exercises-grid">
+                <div class="exercise-card" data-category="neck">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=hsCU4LLNWVybeQcGJS3ar1khczieF5sOMfh6iKzXvorhAVJ%2BEZKWiNs9ofpquUHBEBIbtHkJiH4N2M1L%2BQ54LAKK9ctVisSuvUFtuj1sqPWuhfoH1KUaNvO1os%2B4SzO%2FRfBdYf5TOChepS0talJHOl0g&u2=O8U7L2Yx5SWebpTQ&width=2560" alt="تمارين الرقبة">
+                    <h3>تمارين إطالة الرقبة</h3>
+                    <p>تمارين لتخفيف توتر عضلات الرقبة وتحسين المرونة</p>
+                </div>
+
+                <div class="exercise-card" data-category="back">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=ATICwLIsvJdV95TSA63DQ7wE4EQImBeF%2FGgGBuf5Jrt4Qot1rFjWT27fkdZ%2BHzGuEjki93F%2BbYBgAe6OG5oWjbEkthquWWIPDnDxsJZisWfT%2BD%2FoOhEwXwipi8y79Ica3y6vGO4Z%2BprfGYF37cL1%2BQBqvPm8P5c%3D&u2=fo5Deq85CKY8Wc8I&width=2560" alt="تمارين الظهر">
+                    <h3>تمارين تقوية الظهر</h3>
+                    <p>تمارين لتقوية عضلات الظهر والوقاية من الألم</p>
+                </div>
+
+                <div class="exercise-card" data-category="shoulder">
+                    <img src="pexels-ryutaro-5473182.jpg" alt="تمارين الكتف">
+                    <h3>تمارين حركة الكتف</h3>
+                    <p>تمارين لاستعادة المدى الحركي للكتف</p>
+                </div>
+
+                <div class="exercise-card" data-category="knee">
+                    <img src="https://sspark.genspark.ai/cfimages?u1=hlr9z2%2BlkDDOvb83s2v8VgM4z%2BmS19MDzUrWCAK9s2ECcyNOog77d2WogMYl9O8fXv2GEPf6UBrs7R%2FXdy86krSxJ8M2qMPDTFr6xD%2BGTCHxG1xaTJoHaSSHnjmxv12L6SDvupdQNXUhk%2F8msb8TxRCjr%2BdCMDNVVw%3D%3D&u2=VJ%2FvmrNDqSh5dpxf&width=2560" alt="تمارين الركبة">
+                    <h3>تمارين تقوية الركبة</h3>
+                    <p>تمارين لتقوية عضلات الركبة وتحسين الثبات</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="team">
+        <div class="container">
+            <h2 class="section-title">فريق الخبراء</h2>
+            <p class="section-description">أخصائيون متمرسون في العلاج الطبيعي</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="https://sspark.genspark.ai/cfimages?u1=Y6WlJaXwqzQm4mxT%2BE5P6KdDO%2BddEPGZfccZe07aNHmRbU1Uav5vxpGH5LVH8xYkiysNO4o2vnsmtVs84v3iyjz1TbixHjTJ%2FHN0c6QVL%2Fntcg%3D%3D&u2=lFT%2Fpbn2Vk2Sg8T%2B&width=2560" alt="أخصائي علاج طبيعي">
+                    </div>
+                    <h3>د. أحمد كريم</h3>
+                    <p class="specialty">أخصائي إعادة التأهيل</p>
+                    <p class="bio">خبرة 15 عاماً في إعادة تأهيل الإصابات الرياضية</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Image Dec 28, 2025, 08_11_41 PM.png" alt="أخصائية علاج طبيعي">
+                    </div>
+                    <h3>د. سارة منصور</h3>
+                    <p class="specialty">خبيرة العلاج العصبي</p>
+                    <p class="bio">متخصصة في علاج الاضطرابات العصبية والحركية</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="Image Dec.png" alt="أخصائي علاج طبيعي">
+                    </div>
+                    <h3>د. خالد ناصر</h3>
+                    <p class="specialty">أخصائي علاج كبار السن</p>
+                    <p class="bio">متخصص في برامج التأهيل لكبار السن</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">اتصل بنا</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <h4>الهاتف</h4>
+                            <p>012-3456789</p>
+                            <p>010-9876543</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>البريد الإلكتروني</h4>
+                            <p>info@physiocenter.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>العنوان</h4>
+                            <p>شارع النيل، القاهرة، مصر</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div>
+                            <h4>ساعات العمل</h4>
+                            <p>السبت - الخميس: 9 صباحاً - 8 مساءً</p>
+                            <p>الجمعة: مغلق</p>
+                        </div>
+                    </div>
+
+                    <div class="social-media">
+                        <h3>تابعنا على</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">📘 فيسبوك</a>
+                            <a href="#" class="social-link">🐦 تويتر</a>
+                            <a href="#" class="social-link">📷 انستجرام</a>
+                            <a href="#" class="social-link">💼 لينكد إن</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <img src="T Image.png" alt="خريطة الموقع - شارع النيل القاهرة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🏥 مركز العلاج الطبيعي</h3>
+                    <p>نحن ملتزمون بتقديم أفضل خدمات العلاج الطبيعي وإعادة التأهيل لمرضانا</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <a href="#home">الرئيسية</a>
+                    <a href="#about">عن العلاج</a>
+                    <a href="#services">خدماتنا</a>
+                    <a href="#team">فريقنا</a>
+                </div>
+
+                <div class="footer-section">
+                    <h4>معلومات</h4>
+                    <a href="#treatments">طرق العلاج</a>
+                    <a href="#exercises">التمارين</a>
+                    <a href="#contact">اتصل بنا</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Exercise category filtering - Fixed Logic
+        const categories = document.querySelectorAll('.category');
+        const exerciseCards = document.querySelectorAll('.exercise-card');
+
+        categories.forEach(category => {
+            category.addEventListener('click', function() {
+                // إزالة Active من الجميع وإضافتها للمختار
+                categories.forEach(cat => cat.classList.remove('active'));
+                this.classList.add('active');
+                
+                const selectedCategory = this.getAttribute('data-category');
+                
+                exerciseCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (selectedCategory === cardCategory) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Add scroll effect to header
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .feature-card, .team-member, .exercise-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        console.log('موقع العلاج الطبيعي جاهز ومصلح! 🏥');
+    </script>
+</body>
+</html>

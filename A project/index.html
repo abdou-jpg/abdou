@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم الجراحة | رعاية طبية متقدمة</title>
+    <link rel="icon" href="icon.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🏥 مستشفى الامل</div>
+            <nav>
+                <ul>
+                    <li><a href="#">الرئيسية</a></li>
+                    <li><a href="#">فريقنا</a></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </nav>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>دقة جراحية.. رعاية إنسانية</h1>
+            <p>نستخدم أحدث تقنيات الجراحة طفيفة التوغل لضمان أسرع تعافٍ وأقل ألم للمرضى.</p>
+        </div>
+    </section>
+
+    <section class="specialties">
+        <div class="container">
+            <h2 class="section-title">تخصصاتنا الجراحية</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="icon">❤</div>
+                    <h3><a href="القلب/heart.html" target="_blank">جراحة القلب</a></h3>
+                </div>
+                <div class="card">
+                    <div class="icon">🔬</div>
+                    <h3><a href="المناظير/telescopes.html" target="_blank">جراحة المناظير</a></h3>
+                </div>
+                <div class="card">
+                    <div class="icon">🦴</div>
+                    <h3><a href="العظام/bones.html" target="_blank">جراحة العظام</a></h3>
+                </div>
+                <div class="card">
+                    <div class="icon">🩹</div>
+                    <h3><a href="العامه/general.html" target="_blank">جراحة العام</a></h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctors">
+    <div class="container">
+        <h2 class="section-title">نخبة الجراحين</h2>
+        <div class="grid">
+            <div class="doctor-card">
+                <img src="doctor.jpg" alt="د. أحمد المنصور" class="dr-img-file">
+                <h4>د. أحمد المنصور</h4>
+                <p>استشاري جراحة القلب</p>
+                <button class="profile-btn">عرض الملف</button>
+            </div>
+            
+            <div class="doctor-card">
+                <img src="doctora.jpg" alt="د. سارة العلي" class="dr-img-file">
+                <h4>د. سارة العلي</h4>
+                <p>أخصائية جراحة المناظير</p>
+                <button class="profile-btn">عرض الملف</button>
+            </div>
+            
+            <div class="doctor-card">
+                <img src="doctor2.jpg" alt="د. خالد العمر" class="dr-img-file">
+                <h4>د. خالد العمر</h4>
+                <p>استشاري جراحة العظام</p>
+                <button class="profile-btn">عرض الملف</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 - قسم الجراحة المتطور</p>
+    </footer>
+    
+    <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        // تبديل الكلاس الخاص بالوضع المظلم
+        body.classList.toggle('dark-mode');
+        
+        // تغيير شكل الأيقونة بناءً على الوضع
+        if (body.classList.contains('dark-mode')) {
+            themeToggle.textContent = '☀️'; // شمس للوضع الفاتح
+            localStorage.setItem('theme', 'dark'); // حفظ الإعداد في المتصفح
+        } else {
+            themeToggle.textContent = '🌙'; // قمر للوضع المظلم
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // كود لحفظ حالة المستخدم عند تحديث الصفحة
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';}
+    </script>
+
+</body>
+</html>

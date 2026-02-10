@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> مستشفى الامل - الجراحة العامة</title>
+    <link rel="icon" href="icon.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0d2344;
+            --main-blue: #1a3c6d;
+            --accent-teal: #00bcd4;
+            --light-bg: #f4f7f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark-blue);
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .btn-reserve {
+            background-color: var(--accent-teal);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            background-color: var(--dark-blue);
+            color: white;
+            min-height: 400px;
+            align-items: center;
+            padding: 0 8%;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 35px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            height: 400px;
+            background: url('Screenshot 2025-12-30 105130.png') center/cover;
+            border-bottom-left-radius: 100px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 8%;
+            text-align: center;
+            background-color: var(--light-bg);
+        }
+
+        .services h2 {
+            margin-bottom: 40px;
+            color: var(--main-blue);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .service-card i {
+            font-size: 40px;
+            color: var(--accent-teal);
+            margin-bottom: 15px;
+        }
+
+        /* Doctors Section */
+        .doctors {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .doctors h2 {
+            margin-bottom: 40px;
+        }
+
+        .doctor-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .doctor-card img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--light-bg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+        }
+
+        .social-icons i {
+            margin-right: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding: 40px 20px; }
+            .hero-image { display: none; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fas fa-shield-alt"></i> Al-Aml
+        </div>
+        <nav>
+            <a href="#">الرئيسية</a>
+            <a href="#">المواعيد</a>
+            <a href="#">اتصل بنا</a>
+        </nav>
+        <a href="#" class="btn-reserve">احجز موعداً</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مركز الجراحة العامة<br>الرعاية التي تستحقها</h1>
+            <p>نخبة من الجراحين المتخصصين وأحدث التقنيات لضمان سلامتكم وراحتكم.</p>
+            <br>
+            <a href="#" class="btn-reserve">اكتشف المزيد</a>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+    <section class="services">
+        <h2>تخصصات القسم</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-stomach"></i>
+                <h3>جراحة السمنة</h3>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-female"></i>
+                <h3>جراحة الثدي</h3>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-pills"></i>
+                <h3>المناظير</h3>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-user-md"></i>
+                <h3>الجراحة الطارئة</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="doctors">
+        <h2>طاقمنا الخبير Our Experts</h2>
+        <div class="doctor-grid">
+            <div class="doctor-card">
+                <img src="ahmed.jpg" alt="طبيب">
+                <h3>د. أحمد كمال</h3>
+                <p>استشاري الجراحة العامة</p>
+            </div>
+            <div class="doctor-card">
+                <img src="doctora.jpg" alt="طبيبة">
+                <h3>د. سارة المنصور</h3>
+                <p>أخصائية جراحة المناظير</p>
+            </div>
+            <div class="doctor-card">
+                <img src="doctor - Copy.jpg" alt="طبيب">
+                <h3>د. علي حسن</h3>
+                <p>استشاري جراحة السمنة</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>&copy; 2026 مستشفى الامل - جميع الحقوق محفوظة</div>
+        <div class="social-icons">
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </footer>
+
+</body>
+</html>

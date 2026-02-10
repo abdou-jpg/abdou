@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>حجز موعد</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>حجز موعد</h1>
+  <p>املأ البيانات ثم أكد الحجز</p>
+</header>
+
+<section class="section">
+
+<form class="form" id="bookingForm">
+
+  <label>اسم المريض</label>
+  <input type="text" id="patientName" required>
+
+  <label>رقم الهاتف</label>
+  <input type="tel" id="phone" required>
+
+  <label>اختيار الطبيب</label>
+  <select id="doctor" onchange="updateTimes()" required>
+    <option value="">-- اختر الطبيب --</option>
+    <option value="د/ أحمد محمد">د/ أحمد محمد – جلدية</option>
+    <option value="د/ سارة علي">د/ سارة علي – تجميل جلدي</option>
+    <option value="د/ محمود حسن">د/ محمود حسن – أمراض شعر</option>
+  </select>
+
+  <label>التاريخ</label>
+  <input type="date" id="date" required>
+
+  <label>الوقت</label>
+  <select id="time" required>
+    <option value="">-- اختر الوقت --</option>
+  </select>
+
+  <label>ملاحظات</label>
+  <textarea id="notes"></textarea>
+
+  <button type="button" onclick="reviewBooking()">مراجعة الحجز</button>
+</form>
+
+<div class="review" id="reviewBox">
+  <h3>مراجعة بيانات الحجز</h3>
+  <p id="reviewText"></p>
+  <button onclick="confirmBooking()">تأكيد الحجز</button>
+</div>
+
+<div class="success" id="successMsg">
+  ✅ تم حجز الموعد بنجاح  
+  <br>سيتم التواصل معك قريبًا
+</div>
+
+</section>
+
+<script>
+function updateTimes() {
+  const doctor = document.getElementById("doctor").value;
+  const time = document.getElementById("time");
+  time.innerHTML = '<option value="">-- اختر الوقت --</option>';
+
+  let times = [];
+  if (doctor === "د/ أحمد محمد") times = ["10:00", "11:00", "12:00"];
+  else if (doctor === "د/ سارة علي") times = ["13:00", "14:00", "15:00"];
+  else if (doctor === "د/ محمود حسن") times = ["16:00", "17:00", "18:00"];
+
+  times.forEach(t => {
+    let option = document.createElement("option");
+    option.value = t;
+    option.text = t;
+    time.appendChild(option);
+  });
+}
+
+function reviewBooking() {
+  const name = patientName.value;
+  const phone = document.getElementById("phone").value;
+  const doctor = document.getElementById("doctor").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+
+  if (!name || !phone || !doctor || !date || !time) {
+    alert("من فضلك أكمل جميع البيانات");
+    return;
+  }
+
+  document.getElementById("reviewText").innerHTML =
+    `👤 الاسم: ${name}<br>
+     📞 الهاتف: ${phone}<br>
+     👨‍⚕️ الطبيب: ${doctor}<br>
+     📅 التاريخ: ${date}<br>
+     ⏰ الوقت: ${time}`;
+
+  document.getElementById("reviewBox").style.display = "block";
+}
+
+function confirmBooking() {
+  document.getElementById("reviewBox").style.display = "none";
+  document.getElementById("successMsg").style.display = "block";
+}
+</script>
+
+</body>
+</html>

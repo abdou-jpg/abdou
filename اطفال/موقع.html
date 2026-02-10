@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF_8">
+    <title>م عيادة قسم الاطفال</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        body{
+            font-family: Arial;
+            background-color: #f0f0f0;
+            direction: rtl;
+            margin: 0;
+        }
+        header {
+            background-color: gray;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            color:black;
+        
+        }
+        img {
+            width: 400px;
+            max-width: 400px;
+            display: block;
+            margin: auto;
+            border-radius: 10px;
+        }
+        table {
+            width: 10px;
+            border-collapse: collapse;
+        }
+        table,th,td {
+            border: 1px solid black;
+            text-align: center;
+            padding:5px;
+        }
+        th {
+            background-color:black;
+            color: #f0f0f0;
+        }
+        input,textarea {
+            width: 100px;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5xp;
+            border: 3px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: black;
+            color: white;
+            border: none;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color:gray;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logen.jpg" alt="شعار العيادة">
+            <h2>مركز قسم الاطفال</h2>
+            <p>رعاية قسم الاطفال</p>
+    </header>
+     <nav>
+        <a href="#about"> عن القسم الاطفال</a>
+        <a href="#child new">تسجيل الاطفال</a>
+        <a href="#doctors">الأطباء</a>
+        <a href="about">خدمات</a>
+        <a href="#contact">التواصل</a>
+    </nav>
+
+    <section id="about">
+        <h3>عن قسم الأطفال</h3>
+        <p>
+            يهتم قسم الأطفال في مستشفى الأمل بتقديم الرعاية الصحية المتكاملة للأطفال
+            من الولادة وحتى سن المراهقة، باستخدام أحدث الأجهزة الطبية.
+        </p>
+        <u>نقدم لكم افضل رعاية طبية للاطفل مع فريق متخصص ومجهز بالكامل يعد قسم الاطفال في مستشفي الامل التخصصي من الاقسام المهمة في المستشفي                   حيث يهدف الي تقديم رعاية صحية متكاملة للاطفال من حديثي الولادة حتي سن المراهقة           ,يعمل علي توفير خدمات الفحص و التشخيص و العلاج باستخدام احدث الاساليب الطبية                          مع توفير بيئة امنة ومريحة تناسب الاطفال وتراعي احتياجاتهم النفسية و الطبية   ل</u>
+         <h3>مرحبا بكم في قسم الاطفال</h3>
+        
+        <img src="1.jpg" height="200"
+        
+    </section>
+
+    
+<div class="content"> 
+    
+        <h3>تسجيل طفل جديد</h3>
+    
+        <label>اسم الطفل</label>
+        <input type="text" id="childName">
+
+
+
+        <label>العمر</label>
+        <input type="number" id="age">
+
+        <label>اسم الطبيب</label>
+        <input type="text" id="doctor">
+        
+        <label>موعد الكشف</label>
+        <input type="date" id="date">
+
+        <button onclick="register()">تسجيل</button>
+    </div> 
+    
+    <section id="doctors">
+        <h3>أطباء القسم</h3>
+        <p>
+            يضم القسم نخبة من أفضل أطباء الأطفال ذوي الخبرة والكفاءة العالية.
+        </p>
+        <h2>بيانات الطبيب</h2>
+        <p><strong>الاسم:</strong>د/محمد اسامة </p>
+        <p><strong>التخصص:</strong>اخصائي اطفال</p>
+        <p><strong>رقم الهاتف:</strong>01154563873</p>
+        <p><strong>العنوان:</strong>القاهرة</p>
+    </section>
+ <div class="appointment">
+        <h2>حجز موعد مع الطبيب</h2>
+        <form>
+            <label>الاسم:</label>
+            <input type="text">
+             
+            <label>العمر:</label>
+            <input type="number">
+
+            <label>رقم الهاتف:</label>
+            <input type="tel">
+
+            <label>تاريخ الحجز:</label>
+            <input type="date"
+
+            <input type="submit" value="تاكيد الحجز"
+
+        </form>
+        <button onclick="alert('سيتم التواصل معكم لتاكيد الموعد')">احجز الان</button>
+
+    </section>
+     </div>
+     <section>
+        <h2>مواعيد الحجز</h2>
+        <table>
+            <tr>
+                <th>اليوم</th>
+                <th>من</th>
+                <th>الي</th>
+            </tr>
+            <tr>
+                <td>الاحد</td>
+                <td>5مساء</td>
+                <td>6مساء</td>
+            </tr>
+            <tr>
+                <td>الاربعاء</td>
+                <td>5مساء</td>
+                <td>6مساء</td>
+            </tr>
+        </table>
+    </section>
+<div class="content">
+    <h2>خدمات قسم الاطفال</h2>
+
+    <ul class="services">
+        <li">الكشف الطبي الشامل لاطفال👩‍⚕️🩺ل</li>
+        <li>رعاية حديثي الولادة👶</li>
+        <li>التطعيمات و المتابعة الدورية 💉 </li>
+        <li>استقبال حالات الطوارئ للاطفال🚑</li>
+        <li>متابعة النمو و التغذية🏥</li>
+        <li>الفحوصات الطبية🏥</li>
+        <li>ا👩‍⚕️.شراف طاقم طبي متخصص في طب الاطفال</li>
+    </ul>
+</div>
+    <section id="contact">
+        <h3>معلومات التواصل</h3>
+        <p>📍 العنوان: مدينة الأمل</p>
+        <p>📞 الهاتف: 123456789</p>
+        <p>✉️ البريد الإلكتروني: info@alamalhospital.com</p>
+    </section>
+
+    <footer>
+        <p>© 2025 مستشفى الأمل - جميع الحقوق محفوظة</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قسم طب الأسنان | رعاية متكاملة</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="لوجو.png">
+    
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Dental<span>Clinic</span></div>
+        <ul>
+            <li><a href="#home" class="nav-link active">الصفحة الرئيسية</a></li>
+             <li><a href="#about">من نحن</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button class="nav-btn" onclick="openModal()">حجز موعد</button>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h4>مركز التميز الطبي</h4>
+            <h1>ابتسامة واثقة.. <br> تبدأ من رعاية حقيقية</h1>
+            <p>نجمع بين أحدث تكنولوجيات طب الأسنان والخبرة الطبية العريقة لنقدم لكم تجربة علاجية خالية من الألم وبأعلى معايير الجودة .</p>
+        </div>
+        <div class="hero-image">
+            <img src="لوجو.png" alt="Tooth Model">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h1>من نحن</h1>
+            <h3
+            <p>يعتبر قسم طب الأسنان في مستشفانا واحداً من أعرق الأقسام، حيث نسعى منذ تأسيسنا إلى توفير رعاية صحية شاملة للفم والأسنان باستخدام أحدث أجهزة الأشعة الرقمية وأنظمة التعقيم العالمية. نحن نفخر بفريقنا الطبي المكون من استشاريين دوليين يهدفون دائماً لراحة المريض نحرص في قسم طب الأسنان على تقديم تجربة علاجية مريحة وآمنة، من خلال تشخيص دقيق وخطط علاج مخصصة تناسب كل مريض. نؤمن أن الابتسامة الصحية تبدأ بالاهتمام والتواصل الجيد، لذلك نضع راحة المريض وثقته في مقدمة أولوياتنا.
+
+كما نلتزم بأعلى معايير الجودة والتعقيم، ونسعى باستمرار لمواكبة أحدث التطورات العلمية في مجال طب الأسنان، لضمان نتائج فعّالة وطويلة الأمد. هدفنا هو بناء علاقة ثقة دائمة مع مرضانا وتحقيق أفضل مستوى من الرعاية الصحية..</h3></p>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>خدماتنا المتخصصة</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🦷</div>
+                <h3>زراعة الأسنان</h3>
+                <p>تعويض الأسنان المفقودة بأحدث الغرسات الألمانية التي تدوم مدى الحياة.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">✨</div>
+                <h3>تجميل الابتسامة</h3>
+                <p>تصميم "ابتسامة هوليوود" باستخدام عدسات الفينير واللومينير الرقيقة جداً.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🔬</div>
+                <h3>علاج الجذور</h3>
+                <p>تنظيف قنوات العصب باستخدام الميكروسكوب لضمان دقة العلاج ومنع الألم.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">👶</div>
+                <h3>طب أسنان الأطفال</h3>
+                <p>بيئة مجهزة خصيصاً للأطفال لكسر حاجز الخوف وضمان نمو أسنان سليمة.</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>سجل بياناتك للحجز</h3>
+            <input type="text" id="patientName" placeholder="الاسم بالكامل">
+            <input type="tel" id="patientPhone" placeholder="رقم الجوال">
+            <button class="submit-btn" onclick="confirmBooking()">تأكيد الموعد</button>
+        </div>
+    </div>
+<section id="contact" class="contact-section">
+        <div class="container">
+            <h2>اتصل بنا</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <p>📍 <strong>العنوان:</strong> القاهرة، حي المعادي، شارع النصر</p>
+                    <p>📞 <strong>الهاتف:</strong> 0123456789</p>
+                    <p>📧 <strong>الإيميل:</strong> info@dentalclinic.com</p>
+                    <p>⏰ <strong>مواعيدنا:</strong> السبت - الخميس (9ص - 10م)</p>
+                </div>
+                <form id="contactForm" class="contact-form">
+    <input type="text" id="userName" placeholder="الاسم" required>
+    <input type="email" id="userEmail" placeholder="البريد الإلكتروني" required>
+    <textarea id="userMessage" placeholder="رسالتك" required></textarea>
+    <button type="submit" class="main-btn">إرسال الرسالة</button>
+</form>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

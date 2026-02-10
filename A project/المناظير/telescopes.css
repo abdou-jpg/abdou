@@ -1,0 +1,143 @@
+/* إعدادات عامة */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f9;
+}
+
+/* الهيدر والبانر */
+.hero-section {
+    background-color: #1a2a44; /* اللون الأزرق الداكن */
+    color: white;
+    padding: 20px 10%;
+    border-radius: 0 0 50px 50px;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    max-width: 400px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.hero-img img {
+    max-width: 450px;
+    display: block;
+}
+
+.cta-btn {
+    background-color: #d32f2f; /* اللون الأحمر */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* قسم الأطباء */
+.doctors-section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 40px;
+    color: #1a2a44;
+}
+
+.doctors-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.doc-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    font-size: large;
+    line-height: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    width: 400px;
+    height: 450px;
+}
+
+.doc-card img {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #eef2f5;
+    margin-bottom: 15px;
+}
+
+/* قسم المعلومات والفيديو */
+.info-section {
+    padding: 40px 10%;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.video-placeholder {
+    background: #2c3e50;
+    height: 250px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+    font-size: 50px;
+    color: #d32f2f;
+    cursor: pointer;
+}
+
+.features-list ul {
+    list-style: none;
+    line-height: 2.5;
+    margin-bottom: 20px;
+}
+
+.info-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+}
