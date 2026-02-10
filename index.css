@@ -390,3 +390,79 @@ nav ul li a:hover {
     background-color:#462802 ;
     font-size: large;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 32px; 
+    }
+    
+    .products {
+        grid-template-columns: 1fr; 
+    }
+    
+    .search-bar input {
+        width: 70%;
+    }
+    
+    .search-bar button {
+        padding: 12px 15px;
+    }
+    
+    .sidebar {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s;
+    }
+    
+    .sidebar.active {
+        width: 250px;
+    }
+}
